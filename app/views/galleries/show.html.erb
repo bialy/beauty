@@ -1,0 +1,17 @@
+<p>
+  <b>Nazwa:</b>
+  <%= @gallery.name %>
+</p>
+
+<p>
+	<b>Zdjęcia:</b>
+	
+	<% @pictures.each do |p| %>
+	  <%= image_tag p.photo.url(:thumb) %>
+	   
+	<% end %>
+
+<% if can? :menage, Gallery %>
+	<%= link_to 'Edycja', edit_gallery_path(@gallery) %> |
+	<%= link_to 'Wróć', galleries_path %>
+<% end %>

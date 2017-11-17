@@ -1,0 +1,22 @@
+<% title "Galeria" %>
+<% meta_keywords "galeria, salon urody beauty expert, zdjecia,koszalin" %>
+<% meta_description "Przedstawiamy Państwu galerię Salonu Kosmetycznego Beauty Expert, który znajduje się w Koszalinie przy ul. M. Kopernika 31" %>
+		
+<h1>Galeria</h1>
+
+<% @pictures.each do |picture| %>
+  <div class="photo">
+  	<ul>
+	    <li><%= link_to image_tag(picture.photo.url(:medium), :size => "50x50"), picture.photo.url,:rel => "lightbox2", :title => picture.name  %></li>
+    	<!--<%# picture.gallery.name %></td>-->	
+    	<% if can? :manage, Picture %>
+    		<li><%= link_to 'Edytuj', edit_picture_path(picture) %> | <%= link_to 'Usuń', picture, method: :delete, data: { confirm: 'Czy na pewno?' } %></li>
+    	<% end %>	
+    </ul>
+  </div>  
+<% end %>
+<div class='clear'></div>
+
+<% if can? :create, Picture %>
+	<%= link_to 'Nowy obrazek', new_picture_path %>
+<% end %>	

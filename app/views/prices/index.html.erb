@@ -1,0 +1,25 @@
+<% title "Cennik" %>
+<% meta_keywords "cennik, salon urody, salon kosmetyczny, promocja, koszalin, usługi" %>
+<% meta_description "Salon urody Beauty Expert przedstawia państwu cennik zabiegów kosmetycznych oferowanych na twarz i ciało." %>
+
+<h4>Pielęgnacja dłoni</h4>
+  <%= render 'table' %>
+<h4>Pielęgnacja stóp</h4>
+  <%= render 'feet' %>
+<h4>Pielęgnacja twarzy</h4>
+  <%= render 'face' %>
+<h4>Zabiegi firmowe (Rejuvi)</h4>
+  <%= render 'cp' %>
+<h4>Zabiegi upiększające</h4>
+  <%= render 'beauty' %>
+<h4>Makijaż okolicznościowy</h4>
+  <%= render 'make_up' %>
+<h4>Depilacja woskiem</h4>
+  <%= render 'depilation' %>
+<h4>Masaż</h4>
+  <%= render 'massage' %>
+
+<br />
+<% if can? :manage, Price %>
+	<%= link_to 'New Price', new_price_path %>
+<% end %>

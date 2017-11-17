@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= content_for?(:title) ? content_for(:title) : 'Salon Kosmetyczny Beauty Expert Koszalin - Kosmetolog Kosmetyczka Anna Sikora' %></title>
+		<meta name="keywords" content="<%= meta_keywords %>" /> 
+		<meta name="description" content="<%= meta_description %>" /> 
+		<meta name="author" content="Anna Sikora, Krzysztof Białas" />
+		<meta name="dcterms.rights" content="Salon kosmetyczny Beauty Expert Anna Sikora" />
+		<meta name="googlebot" content="index, follow" />
+		<meta name="robots" content="index, follow" />
+		<meta name="revisit-after" content="3 Days" />
+		<meta name="dc.language" content="pl" />
+		<%= favicon_link_tag "img/layout/favicon.ico" %>
+		<%= javascript_include_tag "menuleft", "application", "jquery-1.10.2.min", "lightbox-2.6.min" %>
+		<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js" %>
+		<%= csrf_meta_tags %>
+		<!--[if IE 6]>
+			<%= stylesheet_link_tag "ie", "lightbox", :media => "all" %>
+		<![endif]-->
+		<!--[if !IE]><!--> <%= stylesheet_link_tag "styles", "lightbox", :media => "all" %> <!--<![endif]-->
+		
+	</head>
+	<body>
+		<section id="logo">
+			<header>
+				<%= link_to(image_tag('img/layout/logo11.png', :size => "500x200", :alt => "Logo Salonu Beauty Expert"), url_for( root_path), :remote => false) %>
+			</header>
+			<p>
+				Salon kosmetyczny Beauty Expert został stworzony z myślą o klientach, którzy pragną skorzystać z zabiegów pielęgnacyjnych jak również z usług obejmujących kosmetologię leczniczą.
+			</p>
+
+			
+			<%= form_for find_search do |f| %>
+			<p>
+				<%= f.text_field :name_contains, :required => true %>
+			</p>
+			<p>
+				<%= f.submit "Szukaj" %>
+			</p>
+			<% end %>
+
+		</section>
+		<nav>
+			<ul>
+				<!--<li><%# link_to "Strona główna", { :controller => "offers" }, :class => 'menuitem active' %></li>
+				<li><%# link_to "Oferta", { :controller => "offers" }, :class => 'menuitem' %></li>
+				-->
+				<li>
+					<%= nav_link_to("Strona główna", root_path) %>
+				</li>
+
+				<li>
+					<%= nav_link_to('Oferta', offers_path) %>
+				</li>
+
+				<li>
+					<%= nav_link_to('Cennik', prices_path) %>
+				</li>
+				<li>
+					<%= nav_link_to('Galeria', pictures_path) %>
+				</li>
+				<li>
+					<%= nav_link_to('Promocje', '/promocje') %>
+				</li>
+				<li>
+					<%= nav_link_to('Kontakt', '/kontakt') %>
+				</li>
+			</ul>
+		</nav>
+
+		<div id="content">
+			<aside>
+				<section class="menuleft">
+					<header>
+						<h1>Logowanie</h1>
+						 <p class="navbar-text">
+						 <% if user_signed_in? %>
+  						   Logged in as <strong><%= current_user.email %></strong>.
+  							<%= link_to 'Edytuj profil', edit_user_registration_path, :class => 'navbar-link' %> |
+  							<%= link_to "Wyloguj", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+						 <% else %>
+						 	<%= link_to 'Zaloguj urzywając facebooka', '/auth/facebook/' %>
+  							<%= link_to "Rejestracja", new_user_registration_path, :class => 'navbar-link'  %> |
+  							<%= link_to "Logowanie", new_user_session_path, :class => 'navbar-link'  %>
+						<% end %>
+						</p>
+					</header>
+					<header>
+						<h1>MENU</h1>
+					</header>
+
+					<dl id="menu0">
+						<dt>
+							<a href="#">Zabiegi na twarz</a>
+						</dt>
+						<dd>
+							<a href="/oferta/mikropeel">Mikropeel</a>
+						</dd>
+						<dd>
+							<a href="/oferta/mezoterapia-mikroiglowa">Mezoterapia mikroigłowa</a>
+						</dd>
+						<dd>
+							<a href="/oferta/peeling-kawitacyjny">Peeling kawitacyjny</a>
+						</dd>
+						<dd>
+							<a href="/oferta/sonoforeza">Sonoforeza</a>
+						</dd>
+						<dd>
+							<a href="/oferta/masaz-twarzy">Masaż twarzy</a>
+						</dd>
+						<dd>
+							<a href="/oferta/zabiegi-pielegnacyjne">Zabiegi pielęgnacyjne</a>
+						</dd>
+						<dt>
+							<a href="/oferta/pedicure">Pedicure</a>
+						</dt>
+						<dt>
+							<a href="/oferta/manicure">Manicure</a>
+						</dt>
+						<dt>
+							<a href="/makijaz-okolicznosciowy">Makijaż okolicznościowy</a>
+						</dt>
+						<dt>
+							<a href="/oferta/przedluzanie-rzes">Przedłużanie rzęs 1:1</a>
+						</dt>
+						<dt>
+							<a href="/oferta/henna-brwi-i-rzes">Henna brwi i rzęs</a>
+						</dt>
+						<dt>
+							<a href="/oferta/depilacja-woskiem">Depilacja woskiem</a>
+						</dt>
+						<dt>
+							<a href="/oferta/zabiegi-parafinowe">Zabiegi parafinowe</a>
+						</dt>
+						<dt>
+							<a href="#">Masaż</a>
+						</dt>
+						<dd>
+							<a href="/oferta/masaz-twarzy">Masaż twarzy</a>
+						</dd>
+						<dd>
+							<a href="/oferta/masaz-banka-chinska">Masaż bańka chińską</a>
+						</dd>
+						<dd>
+							<a href="/oferta/masaz-goracymi-kamieniami">Masaż gorącymi kamieniami</a>
+						</dd>
+					</dl>
+				</section>
+
+				<section class="menuleft">
+					<header>
+						<h1>The most Popular</h1>
+					</header>
+					<ul>
+						<% if !popular_treatments.empty? %>
+							<% @populars.each do |p| %>
+							<li>
+								<%= link_to p.name, p %>
+							</li>
+							<% end %>
+						<% end %>	
+					</ul>
+				</section>
+			</aside>		
+			<div id="maincontent">		
+							
+				<% if notice %>
+  					<p class="alert alert-notice"><%= notice %></p>
+				<% end %>
+				<% if alert %>
+  					<p class="alert alert-error"><%= alert %></p>
+				<% end %>			
+				
+				<%= yield %>
+			</div>
+
+			<aside class="right">
+				<section>
+					<h1>
+						<div class='special_foto'><%= image_tag('img/layout/ania.png', :size => "150x20", :alt => "Anna Sikora właścicielka Salonu Beauty Expert" ) %></div>
+					</h1>
+					
+					<div class="owner">
+						<%= image_tag('img/layout/as.jpg', :size => "80x120", :alt => "Anna Sikora właścicielka Salonu Beauty Expert" ) %>
+					</div>
+					<p>
+						Licencjonowany kosmetolog ze specjalizacją pedicure leczniczy i mani­cure. Charakteryzacja wieczorowa, teatralna i filmowa.
+					</p>
+					<p>
+						Dzięki ciągłemu doskonaleniu i pod­noszeniu swoich umiejętności jak również wielkiej pasji do zawodu zapewniam wysoką jakość oferowanych usług.
+					</p>
+				</section>
+				<section>
+					<h1>Promocje</h1>
+					<a href="/promocje"><%= (image_tag('img/layout/promocje.gif', :size => "181x90", :alt => "Promocja Salonu Beauty Expert" )) %></a>
+				</section>
+				<section>
+					<h1>Kontakt</h1>
+					<p class="contact">
+						Tel. 517 123 876
+						ania@beautyexpert.net.pl
+					</p>
+				</section>
+				<section>
+					<h1>Facebook</h1>
+					<div id="fb-root">
+						<div class="fb-like-box" data-href="https://www.facebook.com/BeautyExpertAnnaSikora" data-width="181" data-height="330" data-show-faces="true" data-stream="false" data-header="false"></div>
+					</div>
+				</section>
+			</aside>
+		</div>
+
+		<footer>
+			<div>
+				<section id="beautyexpert">
+					<h3>Beauty Expert</h3>
+					<ul>
+						<li>
+							<a href="/o-nas">O nas</a>
+						</li>
+						<li>
+							<a href="/kontakt">Kontakt</a>
+						</li>
+						<li>
+							<a href="/partnerzy">Partnerzy</a>
+						</li>
+					</ul>
+				</section>
+				<section id="informations">
+					<h3>Informacje</h3>
+					<ul>
+						<li>
+							<a href="/polityka-prywatnosci">Polityka prywatności</a>
+						</li>
+						<li>
+							<a href="/polityka-cookies">Polityka "cookies"</a>
+						</li>
+						<li>
+							<a href="/regulamin">Regulamin</a>
+						</li>
+					</ul>
+				</section>
+				<section id="help">
+					<h3>Pomoc</h3>
+					<ul>
+						<li>
+							<a href="/faq">FAQ</a>
+						</li>
+						<li>
+							<a href="/zglos-blad">Zgłoś błąd</a>
+						</li>
+					</ul>
+				</section>
+			</div>
+		</footer>
+
+		<script type="text/javascript">
+			// <![CDATA[
+			new Menu('menu0', '', false, true);
+			// ]]>
+		</script>
+
+		<script type="text/javascript">
+			( function(d, s, id) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id))
+						return;
+					js = d.createElement(s);
+					js.id = id;
+					js.src = "//connect.facebook.net/pl_PL/all.js#xfbml=1";
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+		</script>
+
+	</body>
+</html>

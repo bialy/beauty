@@ -1,0 +1,38 @@
+<% title @page.name %>
+
+<% if @page.name == 'Promocje' %>
+	<% meta_keywords "Promocje, salon urody, koszalin, zabiegi promocyjne, oferta dnia, sweetdeal" %>
+	<% meta_description "Aktualne promocje Salonu Kosmetycznego Beauty Expert Koszalin - Kosmetolog Anna Sikora Serdecznie Zapraszam" %>
+  <% else if @page.name == 'Kontakt' %>
+	<% meta_keywords "Kontakt, najlepsze studio urody, koszalin, znajdz nas" %>
+	<% meta_description "Skontaktuj się z nami - Studio Piękności Beauty Expert Koszalin - Kosmetolog Anna Sikora Serdecznie Zapraszam" %>
+  <% end %>
+<% end %>
+
+  <h1><%= @page.name %></h1>
+  <%= textilize(@page.content) %>
+  
+  <% if @page.permalink == "promocje" %>
+  	<div class="promocja">
+  		<%= link_to image_tag(@page.photo.url(:large)), @page.photo.url,:rel => "lightbox2", :title => @page.name  %>
+  	</div>  	
+  		<%= render 'promocje' %> 	
+  		 
+  <% end %>
+  
+  <% if @page.permalink == "kontakt" %>
+  	
+  	<%= render 'kontakt'%>
+  	
+  	<div class='location'>					
+		<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.pl/maps?f=q&amp;source=s_q&amp;hl=pl&amp;geocode=&amp;q=beauty+expert+koszalin&amp;aq=&amp;sll=51.953751,19.134379&amp;sspn=9.497231,21.884766&amp;ie=UTF8&amp;hq=beauty+expert&amp;hnear=Koszalin,+Zachodniopomorskie&amp;ll=54.197713,16.196385&amp;spn=0.008799,0.021372&amp;t=m&amp;z=14&amp;iwloc=A&amp;cid=3598790121838060656&amp;output=embed"></iframe><br /><small><a href="http://maps.google.pl/maps?f=q&amp;source=embed&amp;hl=pl&amp;geocode=&amp;q=beauty+expert+koszalin&amp;aq=&amp;sll=51.953751,19.134379&amp;sspn=9.497231,21.884766&amp;ie=UTF8&amp;hq=beauty+expert&amp;hnear=Koszalin,+Zachodniopomorskie&amp;ll=54.197713,16.196385&amp;spn=0.008799,0.021372&amp;t=m&amp;z=14&amp;iwloc=A&amp;cid=3598790121838060656" style="color:#0000FF;text-align:left">Wyświetl większą mapę</a></small>
+	</div>
+  <% end %>
+
+<% if can? :menage, Page %>
+<p>
+  <%= link_to "Edytuj", edit_page_path(@page) %> |
+  <%= link_to "Usuń", @page, :confirm => 'Czy napewno?', :method => :delete %> |
+  <%= link_to "Pokaż wszystko", pages_path %>
+</p>
+<% end %>

@@ -1,0 +1,24 @@
+<h1>Nowy zabieg</h1> 
+	<%= form_for([@offer, @treatment]) do |f| %> 
+	
+	<% if @treatment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@treatment.errors.count, "error") %> prohibited this offer from being saved:</h2>
+
+      <ul>
+      <% @treatment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  	<% end %>
+
+		
+		<p> <%= f.label :content %><br /> 
+			<%= f.text_area :content, :style => "width:490px" %> 
+		</p> 
+		 
+		<p> <%= f.submit "Create" %> </p> 
+	<% end %> 
+	
+	<%= link_to 'Wróć', offer_treatments_path(@offer) %> 

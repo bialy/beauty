@@ -1,0 +1,19 @@
+<p>
+	<b>Photo:</b>
+	<%= image_tag @picture.photo.url(:medium) %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @picture.name %>
+</p>
+
+<p>
+  <b>Gallery:</b>
+  <%= @picture.gallery.name %>
+</p>
+
+<% if can? :manage, Picture %>
+	<%= link_to 'Edycja', edit_picture_path(@picture) %> |
+	<%= link_to 'Wróć', pictures_path %>
+<% end %>

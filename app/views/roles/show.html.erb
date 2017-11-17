@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nazwa:</b>
+  <%= @role.name %>
+</p>
+
+<% if can? :manage, Role %>
+	<%= link_to 'Edit', edit_role_path(@role) %> |
+	<%= link_to 'Back', roles_path %>
+<% end %>

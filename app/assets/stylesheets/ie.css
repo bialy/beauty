@@ -1,0 +1,75 @@
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+header, nav, aside, article, footer
+{
+	display: block;
+}
+
+.span1
+{
+	width: 55%;
+	overflow:scroll;
+}
+
+body
+{
+	margin: 0 auto;
+	width: 940px;
+	font: 13px/22px Helvetica, Arial, sans-serif;
+	background: #1B4B5F;
+	background-image: url('img/layout/bg2.png');
+	background-repeat: repeat-x;
+}
+
+img
+{
+	border:none;
+}
+
+h1
+{
+	text-align: center;
+	color: #0e4366;
+}
+
+h2
+{
+	width: 100%;
+	padding-bottom: 5px;
+	color: #0e4366;
+	text-align: center;
+}
+
+h3 
+{
+	font-size: 18px;
+	line-height: 22px;
+	padding: 11px 0;
+}
+
+p 
+{
+	padding-bottom: 0px;
+}
+
+#logo
+{
+	background-image: url('img/layout/photo4.png') no-repeat scroll 0 0 #F0F0F0;
+	margin: 80px 0 0 0;
+	padding: 25px 0px 93px 50px;
+	background-size: 36%;
+	background-position: top right;
+	border-radius: 22px 22px 0 0;
+	box-shadow: 0px 4px 12px 0px #aaa;
+}
+
+	#logo p
+	{
+		position: absolute;
+		width: 550px;
+		font-style: italic;
+		color: #777;
+	}

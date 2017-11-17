@@ -1,0 +1,25 @@
+<h1>Użytkownicy</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Rola</th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <% if can? :manage, User %>
+      	<td><%= user.email %></td>
+      	<td><%= user.roles.map{ |r| r.name } %></td>
+      	<td><%= link_to 'Pokaż', user %></td>
+      	<td><%= link_to 'Edytuj', edit_user_path(user) %></td>
+      	<td><%= link_to 'Usuń', user, :confirm => 'Czy na pewno?', :method => :delete %></td>
+      <% end %>	
+    </tr>
+  <% end %>
+</table>
+
+<br />
+<% if can? :create, User %>
+	<%= link_to 'Nowy użytkownik', new_user_path %>
+<% end %>

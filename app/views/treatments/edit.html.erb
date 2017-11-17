@@ -1,0 +1,12 @@
+<h1>Edycja zabiegu</h1> 
+
+	<%= form_for([@offer, @treatment]) do |f| %> 
+		 
+		<p> <%= f.label :content %><br /> 
+			<%= f.text_area :content %> 
+		</p> 
+		<p> <%= f.submit "Update" %> </p> 
+	<% end %> 
+	
+	<%= link_to 'Show', offer_treatment_path(@offer, @treatment) %> 
+	<%= link_to 'Back', offer_treatments_path(@offer) %> 

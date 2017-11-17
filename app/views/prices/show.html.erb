@@ -1,0 +1,25 @@
+<% title "Cena zabiegu " + @price.offer.name %>
+<% meta_keywords "cena zabiegu, cennik, beauty expert, koszalin" %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cena: </b>
+  <% if @price.discount != nil && @price.discount != 0 %>
+  	<%= number_to_currency( @price.price - (@price.price * @price.discount / 100), :unit => "PLN", :separator => ",", :format => "%n %u",  :delimiter => "" ) %>
+  	z <%= number_to_currency( @price.discount, :unit => "%", :format => "%n %u", :precision => 0) %> rabatem
+  <% else %>
+  	<%= number_to_currency( @price.price, :unit => "PLN", :separator => ",", :format => "%n %u",  :delimiter => "") %>
+  <% end %>
+  
+</p>
+
+<p>
+  <b>Zabieg: </b>
+  <%= @price.offer.name %>
+</p>
+
+<% if can? :manage, Price %>
+	<%= link_to 'Edycja', edit_price_path(@price) %> |
+	<%= link_to 'Wróć', prices_path %>
+<% end %>

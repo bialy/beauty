@@ -1,0 +1,28 @@
+<div class="bony">
+	<h2>Bony upominkowe</h2>
+  		<p>
+  			<span class="text_promocje">
+  				Nie masz pomysłu na prezent ? Specjalnie dla Państwa oferujemy bony upominkowe na wybrane zabiegi w atrakcyjnych cenach. Zestawy zabiegów wchodzących w skład bonów dobierane są indywidualnie dla potrzeb klienta. Przykładowe zestawy bonów upominkowych:
+  				<br /><br />
+  				<b>bon dla Pana Młodego (wartość 150zł):</b><br />
+				- masaż kamieniami, <br />
+				- manicure SPA, <br />
+				- peeling kawitacyjny + maska + ampułka <br /><br />
+				<b>bon dla Panny Młodej (wartość 200zł):</b><br />
+				- manicure hybrydowy,<br />
+				- przedłużanie rzęs metodą 1:1,<br />
+				- pedicure SPA. 
+  			</span> 
+		</p>
+</div>		
+<div class="karta_rabatowa">
+	<h2>Karta rabatowa</h2>
+  		<p>
+  			<span class="text_promocje">
+  				Dzięki karcie stałego klienta masz możliwość skorzystania z upustów procentowych na wszystkie zabiegi! Wykonując kolejno zabiegi (co czwarty zabieg) otrzymujesz 15%, 30% i 50% zniżki.
+  			</span>
+  		</p>
+  		<% if @pic.photo.exists? %>
+  		  <%= image_tag @pic.photo.url %>
+  		<% end %> 
+</div>

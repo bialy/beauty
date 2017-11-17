@@ -1,0 +1,45 @@
+<h1>Edycja ceny</h1>
+
+<%= form_for(@price) do |f| %>
+  <% if @price.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@price.errors.count, "error") %> prohibited this price from being saved:</h2>
+
+      <ul>
+      <% @price.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  
+  <div class="field">
+  	<%= f.label :rabat %><br />
+  	<%= f.text_field :discount %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Nazwa %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :offer %><br /> <%= @offer_price %>
+  </div>
+  <div class="field">
+    <%= f.label :Kategoria %><br />
+    <%= f.select(:category, Price::CATEGORY_OPTIONS.map { |value| [ value, value ] }) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+<%= link_to 'Pokaż', @price %> |
+<%= link_to 'Wróć', prices_path %>

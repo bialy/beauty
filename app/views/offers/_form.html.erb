@@ -1,0 +1,44 @@
+<%= form_for @offer, :html => { :multipart => true } do |f| %>
+  <% if @offer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t('activerecord.errors.template.header', :model => Offer.model_name.human, :count => @offer.errors.count) %></h2>
+      <ul>
+      <% @offer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Tagi %><br />
+    <%= f.text_field :tags %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :meta_Opis %><br />
+    <%= f.text_field :metaDesc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+  	<%= f.label :Ikona %><br />
+  	<%= f.file_field :avatar %>
+  </div>
+  <div class="field">
+  	<%= f.label :Zdjecie_kontentu %><br />
+  	<%= f.file_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+    
+    <%= f.select(:type, Offer::OFFER_OPTIONS.map { |value| [ value, value ] }) %>
+    <%# f.select(:test, options_for_select(Array[*Offer::OFFER_OPTIONS.collect {|v,i| [v,Offer::OFFER_OPTIONS.index(v)] }], :selected => f.object.test)) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

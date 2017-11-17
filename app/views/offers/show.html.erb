@@ -1,0 +1,72 @@
+<% title @offer.name %>
+<% meta_keywords @offer.tags %>
+<% meta_description @offer.metaDesc %>
+
+<h1><%= @offer.name %></h1>
+  <div class="cnt_show">
+   <p class="cnt_photo">
+     <% if @offer.picture.exists? %>
+	   <%= image_tag @offer.picture.url(:medium) %>
+     <% end %>	
+   </p>
+   
+   <% if @offer.id == 1 %>
+	 <% @offers.each do |offer| %>
+	  <div class="photo">
+	 	<ul>
+	 		<li><%= link_to image_tag(offer.avatar.url(:small)), offer %></li>
+	 		<li class="offer_name"><%= offer.name %></li>
+	 		<% if can? :manage, Offer %>
+	 			<li><%= link_to 'Edycja', edit_offer_path(offer) %> | <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Czy na pewno?' } %> </li>
+	 		<% end %>	
+	  	</ul>
+	  </div>
+	 <% end %>
+	 <div class='clear'></div>
+   <% end %>	
+
+<% if @offer.id == 16 %>
+  <table class="general">
+	<% @offers2.each do |offer| %>
+	  <tr>
+	    <td class="link"><%= link_to offer.name, offer %></td>
+	   	<% if can? :manage, Offer %>
+	    	<td><%= link_to 'Edycja', edit_offer_path(offer) %></td>
+	    	<td><%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Czy na pewno?' } %></td>
+	    <% end %>	
+	  </tr>
+	<% end %>
+  </table>	
+<% end %>
+
+<% if @offer.id == 29 %>
+	<% @offers3.each do |offer| %>
+	
+	<div class="photo">
+	 	<ul>
+	 		<li><%= link_to image_tag(offer.avatar.url(:small)), offer %></li>
+	 		<li class="offer_name"><%= offer.name %></li>
+	 		<% if can? :manage, Offer %>
+	 			<li><%= link_to 'Edycja', edit_offer_path(offer) %> | <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Czy na pewno?' } %> </li>
+	 		<% end %>	
+	  	</ul>
+	  </div>
+	 <% end %>
+  <div class='clear'></div>
+<% end %>
+
+<% @offer.treatments.each do |t| %> 
+	<div class="textilize">
+		<%=h (textilize(t.content))  %>
+	</div>
+	<% if can? :manage, Offer %>
+	 <%= link_to t.offer.name, offer_treatment_path(@offer, t)%>
+	<% end %> 
+<% end %>
+
+<% if can? :manage, Offer %>
+	<%= link_to 'Edycja', edit_offer_path(@offer) %> |
+	<%= link_to 'Wróć', offers_path %>
+	<%= link_to 'Nowy zabieg', new_offer_treatment_path(@offer) %>
+<% end %>
+</div>

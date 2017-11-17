@@ -1,0 +1,21 @@
+<h1>Zabieg dla oferty: <%= @offer.name %></h1>
+
+<table>
+	<tr>
+		<th>Content</th>
+	</tr>
+	
+	<% for treatment in @treatments %>
+		<tr>
+			<td><%=h treatment.content %></td>
+			<td><%= link_to 'Pokaż', offer_treatment_path(@offer, treatment) %></td> 
+			<td><%= link_to 'Edycja', edit_offer_treatment_path(@offer, treatment) %></td> 
+			<td><%= link_to 'Usuń', offer_treatment_path(@offer, treatment), :confirm => 'Czy napewno?', :method => :delete %></td>
+		</tr>			
+	<% end %>
+	
+</table>
+<% if can? :create, Treatment %>
+	<%= link_to 'Nowy zabieg', new_offer_treatment_path(@offer) %>
+	<%= link_to 'Wróć do oferty', @offer %>
+<% end %>	

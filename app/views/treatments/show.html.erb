@@ -1,0 +1,12 @@
+1.typ oferty
+2. tresc konkretnego zabiegu
+
+1.<h1><%=h @offer.name %></h1>
+
+2.<%= h(textilize(@treatment.content)) %>
+
+<% if can? :manage, Offer %>
+	<%= link_to 'Edytuj', edit_offer_treatment_path(@offer, @treatment) %>
+	<%= link_to 'Wróć', offer_treatments_path(@offer) %>
+	<%= link_to 'Usuń', offer_treatment_path(@offer, @treatment), :confirm => 'Czy napewno?', :method => :delete %>
+<% end %>

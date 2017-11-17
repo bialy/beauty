@@ -1,0 +1,19 @@
+<table>
+ <% @prices_depilation.each do |price| %>
+  <tr>
+  	<td class="price"><%= price.name %></td>
+    <td class="price2"><%= number_to_currency( price.price, :unit => "PLN", :separator => ",", :format => "%n %u",  :delimiter => "" ) %></td>
+    <td><%= number_to_currency( price.discount, :unit => "%", :format => "%n %u", :precision => 0 ) %> </td>
+    
+    <% if price.discount != nil && price.discount != 0 %>
+     <td>Po rabacie <%= number_to_currency( price.price - (price.price * price.discount / 100), :unit => "PLN", :separator => ",", :format => "%n %u",  :delimiter => "" ) %> </td>
+    <% else %>
+    <% end %>
+    
+    <% if can? :manage, price %> 
+      <td><%= link_to 'Edit', edit_price_path(price) %></td>
+      <td><%= link_to 'Destroy', price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>  
+  </tr>
+ <% end %>
+</table>

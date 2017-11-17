@@ -1,0 +1,32 @@
+<% meta_keywords 'Oferta salonu Urody' %>
+<h1>Oferta</h1>
+
+<div>
+	<% if !@offers.empty? %>
+	<% @offers.each do |offer| %>
+	<div class="photo">
+	  <ul>
+	  	<% if params[:search].blank? %>
+	  		<li><%= link_to image_tag(offer.avatar.url(:small)), offer %></li>
+			<li class="offer_name"><%= offer.name %></li>
+		<% else %>
+			<li><%= link_to(offer.name, offer) %></li>
+		<% end %>
+		<% if can? :manage, Offer %>
+			<li><%= link_to 'edycja', edit_offer_path(offer) %> | <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Czy na pewno?' } %></li>
+		<% end %>	
+	  </ul>	
+	</div>
+	<% end %>
+	<div class='clear'></div>
+	<% else %>
+	Brak wyników w wyszukiwarce dla frazy <b><%= params[:search][:name_contains] %></b>
+	<% end %>
+	
+</div>
+
+<br />
+<% if can? :create, Offer %>
+  <%= link_to 'Nowa oferta', new_offer_path %>
+<% end %>
+

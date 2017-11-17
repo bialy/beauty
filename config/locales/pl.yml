@@ -1,0 +1,353 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+pl:
+  devise:
+    confirmations:
+      confirmed: "Konto zostało aktywowane. Zalogowano Cię w Diasporze."
+      new:
+        resend_confirmation: "Wyślij ponownie instrukcję aktywacji"
+      send_instructions: "W ciągu kilku minut otrzymasz wiadomość zawierającą instrukcję aktywacji konta."
+    failure:
+      inactive: "Twoje konto nie zostało jeszcze aktywowane."
+      invalid: "Nieprawidłowa nazwa użytkownika lub hasło."
+      invalid_token: "Nieprawidłowy token uwierzytelnienia."
+      locked: "Twoje konto jest zablokowane."
+      timeout: "Sesja wygasła, aby kontynuować zaloguj się ponownie."
+      unauthenticated: "Aby kontynuować zaloguj się lub zarejestruj."
+      unconfirmed: "Musisz aktywować swoje konto."
+    invitations:
+      invitation_token_invalid: "Token zaproszenia jest nieprawidłowy!"
+      send_instructions: "Zaproszenie zostało wysłane."
+      updated: "Hasło zostało pomyślnie zmienione. Zalogowano."
+    mailer:
+      confirmation_instructions:
+        confirm: "Aktywuj moje konto"
+        subject: "Instrukcja aktywacji"
+        you_can_confirm: "Możesz aktywować swoje konto klikając poniższe łącze:"
+      hello: "Cześć %{email}!"
+      invitation_instructions:
+        accept: "Przyjmij zaproszenie"
+        arrived: "Sieć społecznościowa na którą czekałeś lub czekałaś właśnie stała się faktem. Przebudowana, bezpieczniejsza i zabawniejsza %{strong_diaspora} jest gotowa pomóc Ci dzielić się i odkrywać internet w zupełnie nowy sposób."
+        be_yourself: "Bądź sobą"
+        be_yourself_paragraph: "Internet dostarcza wiele zupełnie nowych sposobów wyrażania siebie. %{strong_diaspora} pozwala Ci być sobą i udostępniać cokolwiek chcesz, podając lub nie swoje prawdziwe imię i nazwisko."
+        cubbies: "Cubbi.es"
+        displaying_correctly: "Wiadomość nie jest wyświetlana prawidłowo? %{link}"
+        email_address: "questions@joindiaspora.com"
+        email_us: "Pytania ogólne oraz zgłoszenia problemów z kontem na Diasporze należy kierować do nas na adres %{email}."
+        finally: "Nareszcie - jest tutaj"
+        friends_saying: "Co mówią Twoi znajomi..."
+        get_connected: "Bądź w kontakcie"
+        get_connected_paragraph: "Międzynarodowy ruch dzielący wspólną wizję lepszego internetu. %{strong_diaspora} - tutaj społeczność jest na pierwszym planie. Poznaj nowych ludzi, połącz się ze znajomymi i bawcie się razem."
+        have_fun: "Baw się dobrze"
+        have_fun_paragraph: "%{strong_diaspora} służy odkrywaniu niesamowitych nowych treści i ludzi. %{link}, pierwsza na świecie %{strong_diaspora} aplikacja to tylko początek. Zbieraj i udostępniaj zawartość internetu w całej okazałości."
+        help_fund: "wspomóż Diasporę darowizną"
+        here: "tutaj"
+        ignore: "Zignoruj tę wiadomość jeśli nie chcesz zaakceptować tego zaproszenia."
+        join_team: "Dołącz do naszego zespołu"
+        love: "Pozdrawiamy,"
+        made_by_people: "%{strong_diaspora} została stworzona przez ludzi kochających internet tak samo jak Ty. %{jointeam} lub %{helpfund}!"
+        more_people: "Jeszcze więcej osób nie może się doczekać, aby Cię zobaczyć!"
+        no_account_till: "Konto nie zostanie utworzone dopóki nie zalogujesz się na stronie powyżej."
+        or: "lub"
+        sign_up_now: "Zarejestruj się teraz →"
+        subject: "Zapraszamy do dołączenia do Diaspory!"
+        team_diaspora: "Zespół Diaspory"
+        unsubscribe: "Aby zrezygnować z subskrypcji kliknij %{link}."
+        view_in: "Wyświetl w przeglądarce."
+      inviter:
+        accept_at: "na %{url}, możesz je zaakceptować używając poniższego łącza."
+        has_invited_you: "%{name}"
+        have_invited_you: "%{names} zaprosili Cię do Diaspory"
+      reset_password_instructions:
+        change: "Zmiana hasła"
+        ignore: "Jeśli nie chcesz zmienić hasła, zignoruj tę wiadomość."
+        someone_requested: "Odebraliśmy zgłoszenie zmiany hasła, jeśli chcesz to zrobić kliknij poniższy odnośnik:"
+        subject: "Instrukcja resetowania hasła"
+        wont_change: "Hasło nie zostanie zmienione do momentu kliknięcia powyższego łącza i utworzenia nowego."
+      unlock_instructions:
+        account_locked: "Konto zostało zablokowane, ponieważ przekroczono limit nieudanych prób logowania."
+        click_to_unlock: "Kliknij poniższy link, aby odblokować konto:"
+        subject: "Instrukcja odblokowania"
+        unlock: "Odblokuj moje konto"
+      welcome: "Witaj %{email}!"
+    passwords:
+      edit:
+        change_password: "Zmień hasło"
+      new:
+        forgot_password: "Nie pamiętasz hasła?"
+        no_account: "Konto z przypisanym podanym adresem e-mail nie istnieje. Jeżeli czekasz na nowe zaproszenia, wysyłamy je tak szybko, jak to tylko możliwe."
+        send_password_instructions: "Wyślij mi instrukcję resetowania hasła"
+      send_instructions: "W ciągu kilku minut otrzymasz wiadomość zawierającą instrukcję resetowania hasła."
+      updated: "Hasło zostało zmienione. Zalogowano pomyślnie."
+    registrations:
+      destroyed: "Do widzenia! Konto zostało pomyślnie zamknięte. Mamy nadzieję, że wkrótce zobaczymy Cię ponownie!"
+      signed_up: "Rejestracja przebiegła pomyślnie. Jeśli aktywowano odpowiednią opcję, wyślemy do Ciebie e-mail potwierdzający ten fakt."
+      updated: "Pomyślnie zaktualizowano konto."
+    sessions:
+      new:
+        alpha_software: "Masz zamiar korzystać z oprogramowania w wersji alfa."
+        bugs_and_feedback: "Miej świadomość, że napotkasz na błędy. Zachęcamy do korzystania z łącza \"Feedback\" umieszczonego po prawej stronie okna przeglądarki, aby zgłaszać wszelkie problemy. Pracujemy najszybciej jak się da, aby rozwiązać wszystkie zgłaszane problemy."
+        bugs_and_feedback_mobile: "Informujemy o możliwości występowania błędów. Zachęcamy do informowania o nich! Postaramy się jak najszybciej je zlikwidować. "
+        login: "Zaloguj się"
+        modern_browsers: "obsługuje wyłącznie nowoczesne przeglądarki."
+        password: "Hasło"
+        remember_me: "Pamiętaj mnie"
+        sign_in: "Zaloguj się"
+        username: "Nazwa użytkownika"
+      signed_in: "Zalogowano pomyślnie."
+      signed_out: "Pomyślnie wylogowano."
+    shared:
+      links:
+        forgot_your_password: "Nie pamiętasz hasła?"
+        receive_confirmation: "Nie otrzymano instrukcji aktywacji?"
+        receive_unlock: "Nie otrzymano instrukcji odblokowywania?"
+        sign_in: "Zaloguj się"
+        sign_up: "Zarejestruj się"
+        sign_up_closed: "Otwarta rejestracja jest w tym momencie wyłączona."
+      mail_signup_form:
+        sign_up_for_an_invite: "Zgłoś się po zaproszenie!"
+    unlocks:
+      new:
+        resend_unlock: "Wyślij ponownie instrukcję odblokowywania"
+      send_instructions: "W ciągu kilku minut otrzymasz wiadomość z instrukcją odblokowania konta."
+      unlocked: "Konto zostało pomyślnie odblokowane. Pomyślnie zalogowano."
+  errors:
+    messages:
+      already_confirmed: "już potwierdzone"
+      not_found: "nie znaleziono"
+      not_locked: "nie był(a) zablokowany/a"
+  date:
+    abbr_day_names:
+    - nie
+    - pon
+    - wto
+    - śro
+    - czw
+    - pią
+    - sob
+    abbr_month_names:
+    -
+    - sty
+    - lut
+    - mar
+    - kwi
+    - maj
+    - cze
+    - lip
+    - sie
+    - wrz
+    - paź
+    - lis
+    - gru
+    day_names:
+    - niedziela
+    - poniedziałek
+    - wtorek
+    - środa
+    - czwartek
+    - piątek
+    - sobota
+    formats:
+      default: ! '%d-%m-%Y'
+      long: ! '%B %d, %Y'
+      short: ! '%d %b'
+    month_names:
+    -
+    - styczeń
+    - luty
+    - marzec
+    - kwiecień
+    - maj
+    - czerwiec
+    - lipiec
+    - sierpień
+    - wrzesień
+    - październik
+    - listopad
+    - grudzień
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: około %{count} godziny
+        one: około godziny
+        other: około %{count} godzin
+        many: około %{count} godzin
+      about_x_months:
+        few: około %{count} miesiące
+        one: około miesiąca
+        other: około %{count} miesięcy
+        many: około %{count} miesięcy
+      about_x_years:
+        few: około %{count} lata
+        one: około rok
+        other: około %{count} lat
+        many: około %{count} lat
+      almost_x_years:
+        few: prawie %{count} lata
+        one: prawie rok
+        other: prawie %{count} lat
+        many: prawie %{count} lat
+      half_a_minute: pół minuty
+      less_than_x_minutes:
+        few: mniej niż %{count} minuty
+        one: mniej niż minutę
+        other: mniej niż %{count} minut
+        many: mniej niż %{count} minut
+      less_than_x_seconds:
+        few: mniej niż %{count} sekundy
+        one: mniej niż sekundę
+        other: mniej niż %{count} sekund
+        many: mniej niż %{count} sekund
+      over_x_years:
+        few: ponad %{count} lata
+        one: ponad rok
+        other: ponad %{count} lat
+        many: ponad %{count} lat
+      x_days:
+        few: ! '%{count} dni'
+        one: 1 dzień
+        other: ! '%{count} dni'
+        many: ! '%{count} dni'
+      x_minutes:
+        few: ! '%{count} minuty'
+        one: 1 minuta
+        other: ! '%{count} minut'
+        many: ! '%{count} minut'
+      x_months:
+        few: ! '%{count} miesiące'
+        one: 1 miesiąc
+        other: ! '%{count} miesięcy'
+        many: ! '%{count} miesięcy'
+      x_seconds:
+        few: ! '%{count} sekundy'
+        one: 1 sekunda
+        other: ! '%{count} sekund'
+        many: ! '%{count} sekund'
+    prompts:
+      day: Dzień
+      hour: Godzina
+      minute: Minuta
+      month: Miesiąc
+      second: Sekundy
+      year: Rok
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: musi zostać zaakceptowane
+      blank: nie może być puste
+      confirmation: nie zgadza się z potwierdzeniem
+      empty: nie może być puste
+      equal_to: musi być równe %{count}
+      even: musi być parzyste
+      exclusion: jest zarezerwowane
+      greater_than: musi być większe od %{count}
+      greater_than_or_equal_to: musi być większe lub równe %{count}
+      inclusion: nie znajduje się na liście dopuszczalnych wartości
+      invalid: jest nieprawidłowe
+      less_than: musi być mniejsze od %{count}
+      less_than_or_equal_to: musi być mniejsze lub równe %{count}
+      not_a_number: nie jest liczbą
+      not_an_integer: musi być liczbą całkowitą
+      odd: musi być nieparzyste
+      record_invalid: ! 'Negatywne sprawdzenie poprawności: %{errors}'
+      taken: zostało już zajęte
+      too_long: jest za długie (maksymalnie %{count} znaków)
+      too_short: jest za krótkie (przynajmniej %{count} znaków)
+      wrong_length: ma nieprawidłową długość (powinna wynosić %{count} znaków)
+    template:
+      body: ! 'Błędy dotyczą następujących pól:'
+      header:
+        one: ! 'Obiekt %{model} nie został zachowany z powodu jednego błędu'
+        few: ! 'Obiekt %{model} nie został zachowany z powodu %{count} błędów'
+        other: ! 'Obiekt %{model} nie został zachowany z powodu %{count} błędów'
+        many: ! 'Obiekt %{model} nie został zachowany z powodu %{count} błędów'
+  helpers:
+    select:
+      prompt: Proszę wybrać
+    submit:
+      create: Utwórz %{model}
+      submit: Zapisz %{model}
+      update: Aktualizuj %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ' '
+        format: ! '%u %n'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: true
+        unit: PLN
+    format:
+      delimiter: ! ' '
+      precision: 3
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Miliard
+          million: Milion
+          quadrillion: Biliard
+          thousand: Tysiąc
+          trillion: Bilion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: bajt
+            few: bajty
+            many: bajty
+            other: bajty
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ' oraz '
+      two_words_connector: ! ' i '
+      words_connector: ! ', '
+  time:
+    am: przed południem
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: po południu
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    models:
+      offer: 'Oferta'
+      gallery: 'Galeria'
+      picture: 'Obrazek'
+      price: 'Cena'
+      user: 'Użytkownik'  
+    attributes:
+      offer:  
+        name: 'Nazwa'  
+        type: 'Typ'
+    errors:
+      <<: *errors    

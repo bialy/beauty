@@ -1,0 +1,24 @@
+<% title "Dostępne Galerie" %>
+<% meta_keywords "Lista galerii Salonu Kosmetycznego Beauty Expert - kosmetolog Anna Sikora"%>
+<% meta_description "Lista dostępnych galerii Salonu Urody Beauty Expert Koszalin" %>
+
+
+<h1>Galerie</h1>
+
+<table class="general">
+
+  <% @galleries.each do |gallery| %>
+    <tr>
+      <td><%= link_to(gallery.name, gallery) %></td>
+      <% if can? :menage, gallery %>
+    	<td><%= link_to 'Edytuj', edit_gallery_path(gallery) %></td>
+    	<td><%= link_to 'Usuń', gallery, method: :delete, data: { confirm: 'Czy napewno chcesz usunąć tą galerię?' } %></td>
+      <% end %>	
+    </tr>
+  <% end %>
+</table>
+
+<br />
+<% if can? :menage, Gallery %>
+	<%= link_to 'Nowa galeria', new_gallery_path %>
+<% end %>

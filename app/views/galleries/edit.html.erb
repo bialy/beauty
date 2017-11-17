@@ -1,0 +1,13 @@
+<h1>Edycja galerii</h1>
+
+<%= render 'form' %>
+
+	<% @pictures.each do |p| %>
+	  <%= image_tag p.photo.url(:thumb) %>
+	  <%= p.name %>
+	  <%= link_to 'Edit', edit_picture_path(p) %>
+	  <%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+<br />
+<%= link_to 'Pokaż', @gallery %> |
+<%= link_to 'Wróć', galleries_path %>
